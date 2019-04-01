@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="text-transform: capitalize">{{ cart }}</h1>
+
+    {% for item in cart_products %}
+        <h3>
+            <span>
+                <a class="btn btn-sm btn-danger" href="/cart/delete/{{ item.pk }}"> &cross; </a>
+            </span>
+             {{ item }}       
+             <span class="label label-success">&pound; {{ item.price }}</span>                
+        </h3>
+
+    {% endfor %}
+
+    <hr>
+
+        <h1>Total Costs: {{ total }} &pound;</h1>
+        <a href="/checkout/" class="btn btn-lg btn-success">Checkout</a>
+{% endblock %}

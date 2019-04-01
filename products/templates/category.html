@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p style="width: 60%; letter-spacing: .2em; line-height: 1.6em; color: #777">{{ category.description }}</p>
+    <hr>
+
+    <div class="row">
+    {% for product in products %}
+        <div class="col-md-4">
+            <div class="jumbotron" style="padding: 20px; position: relative;">
+                <h3 style="position: absolute; right: 20px; top: 20px; color: darkgreen">{{ product.price }} &pound;</h3>
+                <h2>{{ product.name }}</h2>
+                <p class="" style="padding: 10px; height: 200px;">
+                    {{ product.description }}
+                </p>
+                <p><a class="btn btn-success btn-lg" style="float:right" href="/categories/{{ category.pk }}/products/{{ product.pk }}/" role="button">Add To Cart</a></p>
+                
+                <div class="clear-fix" style="clear: both"></div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
