@@ -7,7 +7,7 @@ chardet==3.0.4
 Click==7.0
 configparser==3.5.0
 cryptography==2.6.1
-Django==1.11.20
+Django==2.2.24
 django-allauth==0.39.1
 django-crispy-forms==1.7.2
 django-registration-redux==1.1
